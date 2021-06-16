@@ -1,0 +1,49 @@
+html {
+    background-color: #A6CBFC;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+}
+
+body {
+    background-color: #A6CBFC;
+}
+
+h1 {
+    text-align: center;
+}
+
+div {
+
+    text-align: center;
+    padding: 20px;
+    
+}
+
+.tempo {
+
+    background-color: rgb(220, 235, 13);
+    
+}
+
+.loginForm {
+
+    background-color: rgba(56, 0, 112, 0.3);
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 25px;
+    border: 2px solid #000000;
+    padding: 20px;
+    /*width: 200px;
+    height: 150px; */
+
+}
+
+.loginForm h1 {
+
+    font-weight: bold;
+    font-size: larger;
+    padding-bottom: 30px;
+
+}
+
