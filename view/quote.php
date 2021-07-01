@@ -108,17 +108,6 @@
                     <td>Controller</td>
                     <td>GFC500</td>
                 </tr>
-                <tr>
-                    <td>Garmin</td>
-                    <td>Controller</td>
-                    <td>GFC500</td>
-                </tr>
-                <tr>
-                    <td>Garmin</td>
-                    <td>Controller</td>
-                    <td>GFC500</td>
-                </tr>
-
 
             </table>
 
@@ -126,13 +115,47 @@
 
         </div>
 
-        <div class="col-xs-3">
+        <div class="col-xs-1">
 
-            more stuff
+            <div class="buffer">
+
+
+                <h5>plus</h5><br>
+
+                <h5>minus</h5><br>
+
+            </div>
 
         </div>
 
-        <div class="col-xs-6">
+        <div class="col-xs-4">
+
+        <div class="buffer">
+
+           <table>
+
+            <tr>
+                <th>Make</th>
+                <th>Model</th>
+                <th>System</th>
+                <th>Price</th>
+            </tr>
+
+            <tr>
+                <td>Garmin</td>
+                <td>Controller</td>
+                <td>GFC500</td>
+                <td>$7,995</td>
+            </tr>
+
+           </table>
+
+
+        </div>
+
+        </div>
+
+        <div class="col-xs-4">
 
             more more stuff
 
