@@ -1,6 +1,6 @@
 <?php
 
-    include('header.php');
+    include('indexheader.php');
 
 ?>
 
@@ -11,13 +11,13 @@
 
             <h1>Create A New Account</h1>
 
-            <form>
-                <label for="email">Email:</label><br>
-                <input type="text" id="email" name="email"><br><br>
-                <label for="pw">Password:</label><br>
-                <input type="text" id="pw" name="pw"><br><br>
+            <form action="authenticate.php" method="post">
+                <label for="username">Username:</label><br>
+                <input type="text" id="username" name="username"><br><br>
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" name="passwprd"><br><br>
                 <label for="confirm">Confirm Password:</label><br>
-                <input type="text" id="confirm" name="confirm"><br><br>
+                <input type="password" id="confirm" name="confirm"><br><br>
                 <input type="submit" value="Create Account" style="padding: 10px";>
             </form> 
 
@@ -38,11 +38,11 @@
 
             <h1>Log In</h1>
 
-            <form>
-                <label for="email">Email:</label><br>
-                <input type="text" id="email" name="email"><br><br>
-                <label for="pw">Password:</label><br>
-                <input type="text" id="pw" name="pw"><br><br>
+            <form action="authenticate.php" method="post">
+                <label for="username">Username:</label><br>
+                <input type="text" id="username" name="username" required><br><br>
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" name="password" required><br><br>
                 <input type="submit" value="Log In" style="padding: 10px";>
             </form>
 

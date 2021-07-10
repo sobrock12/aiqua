@@ -26,21 +26,6 @@
 </head>
 
 <body>
-   
-    <nav class="navtop">
-
-        <div>
-
-            <a href="profile.php">Profile</a>
-            <a href="logout.php">Logout</a>
-
-        </div>
-
-    </nav> 
-        
     <header>
 
         <h1>Avionics Installation Quote Assistant</h1>
-
-    </header>
-

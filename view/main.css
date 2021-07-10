@@ -140,6 +140,42 @@ div {
 
   .buffer h5 {
 
-    padding-top: 250px;
+    padding-top: 160px;
 
   }
+
+  .navtop {
+
+    height: 30px;
+    width: 100%;
+    border: 0;
+    text-align: right;
+
+  }
+
+  .navtop div {
+
+    display: flex;
+    margin: 0 auto;
+    width: 1000px;
+    height: 100%;
+    text-align: right;
+
+  }
+
+  .navtop div h1, .navtop div a {
+
+    display: inline-flex;
+    align-items: right;
+
+  }
+
+  .navtop div a {
+
+    padding: 0 20px;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: right;
+
+  }
+
