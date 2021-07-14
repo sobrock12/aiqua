@@ -1,4 +1,5 @@
 <?php
+echo "<body style='background-color:#A6CBFC'>";
 session_start();
 
 $DATABASE_HOST = 'localhost';
@@ -43,6 +44,8 @@ if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE username = ?'
             $_SESSION['id'] = $id;
 
             echo 'Welcome ' . $_SESSION['name'] . '!';
+            echo ' Continuing to Quote Selection Page in 5 seconds...';
+            header( "refresh:5;url=select.php" );
 
         } else {
 

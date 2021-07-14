@@ -4,7 +4,7 @@
 
     if (!isset($_SESSION['loggedin'])) {
 
-	    header('Location: index.html');
+	    header('Location: index.php');
 
 	exit;
 }
@@ -30,7 +30,7 @@
     <nav class="navtop">
 
         <div>
-
+            Welcome, <?=$_SESSION['name']?>
             <a href="profile.php">Profile</a>
             <a href="logout.php">Logout</a>
 
