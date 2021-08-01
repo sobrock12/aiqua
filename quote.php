@@ -1,6 +1,6 @@
 <?php
 
-    include('header.php');
+    include('view/header.php');
 
 ?>
 

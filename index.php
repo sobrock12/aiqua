@@ -1,6 +1,6 @@
 <?php
 
-    include('indexheader.php');
+    include('view/indexheader.php');
 
 ?>
 
@@ -11,11 +11,11 @@
 
             <h1>Create A New Account</h1>
 
-            <form action="createuser.php" method="post">
+            <form action="model/createuser.php" method="post">
                 <label for="username">Username:</label><br>
                 <input type="text" id="username" name="username"><br><br>
                 <label for="password">Password:</label><br>
-                <input type="password" id="password" name="passwprd"><br><br>
+                <input type="password" id="password" name="password"><br><br>
                 <label for="confirm">Confirm Password:</label><br>
                 <input type="password" id="confirm" name="confirm"><br><br>
                 <input type="submit" value="Create Account" style="padding: 10px";>
@@ -38,7 +38,7 @@
 
             <h1>Log In</h1>
 
-            <form action="authenticate.php" method="post">
+            <form action="model/authenticate.php" method="post">
                 <label for="username">Username:</label><br>
                 <input type="text" id="username" name="username" required><br><br>
                 <label for="password">Password:</label><br>
@@ -54,6 +54,6 @@
 
 <?php
 
-    include('footer.php');
+    include('view/footer.php');
 
 ?>

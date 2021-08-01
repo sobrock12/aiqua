@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
-    <link rel="stylesheet" type="text/css" href="main.css" />
+    <link rel="stylesheet" type="text/css" href="view/css/main.css" />
 
 </head>
 
@@ -30,9 +30,9 @@
     <nav class="navtop">
 
         <div>
-            Welcome, <?=$_SESSION['name']?>
+            Welcome, <?=$_SESSION['username']?>
             <a href="profile.php">Profile</a>
-            <a href="logout.php">Logout</a>
+            <a href="view/logout.php">Logout</a>
 
         </div>
 
