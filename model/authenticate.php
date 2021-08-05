@@ -11,7 +11,7 @@ if ( !isset($_POST['username'], $_POST['password']) ) {
 }
 
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("location: welcome.php");
+    header("location: select.php");
     exit;
 }
 

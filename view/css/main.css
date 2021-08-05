@@ -144,6 +144,12 @@ div {
 
   }
 
+  .buffer hr {
+
+    border: 1px solid black;
+
+  }
+
   .navtop {
 
     height: 30px;
@@ -178,4 +184,11 @@ div {
     text-align: right;
 
   }
+
+  .modal-content {
+
+    background-color: #A6CBFC;
+
+  }
+
 

@@ -31,7 +31,8 @@
 
         <div>
             Welcome, <?=$_SESSION['username']?>
-            <a href="profile.php">Profile</a>
+            <a href="inventory.php">Manage Inventory</a>
+            <a href="select.php">Quote Selection</a>
             <a href="view/logout.php">Logout</a>
 
         </div>
