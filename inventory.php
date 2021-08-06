@@ -1,7 +1,17 @@
 <?php 
 
-    include('view/header.php')
+    include('view/header.php');
 
+    require('model/database.php');
+
+    $acctID = $_SESSION['id'];
+
+    $query = 'SELECT * FROM inventory WHERE acctID = :acctID';
+    $statement = $pdo->prepare($query);
+    $statement->bindValue(':acctID', $acctID);
+    $statement->execute();
+    $invItems = $statement->fetchAll();
+    $statement->closeCursor();
 
 ?>
 
@@ -47,19 +57,21 @@
 
             <table>
 
-                <tr>
-                    <th>Make</th>
-                    <th>Model</th>
-                    <th>System</th>
-                    <th>Price</th>
-                </tr>
+                    <tr>
+                        <th>Make</th>
+                        <th>Model</th>
+                        <th>System</th>
+                        <th>Price</th>
+                    </tr>
 
-                <tr>
-                    <td>Garmin</td>
-                    <td>Controller</td>
-                    <td>GFC500</td>
-                    <td>$7,995</td>
-                </tr>
+                    <?php foreach ($invItems as $invItem) : ?>
+                    <tr>
+                        <td><?php echo $invItem['make']; ?></td>
+                        <td><?php echo $invItem['model']; ?></td>
+                        <td><?php echo $invItem['system']; ?></td>
+                        <td><?php echo $invItem['price']; ?></td>
+                    </tr>
+                    <?php endforeach; ?>
 
             </table>
 
