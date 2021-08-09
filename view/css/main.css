@@ -116,12 +116,18 @@ div {
     padding: 8px;
     height: 40px;
   }
+
+  th {
+
+    background-color: rgba(56, 0, 112, 0.3);
+
+  }
   
-  tr:nth-child(even) {
+  tbody tr:nth-child(even) {
     background-color: white;
   }
 
-  tr:nth-child(odd) {
+  tbody tr:nth-child(odd) {
     background-color: #dddddd;
   }
 

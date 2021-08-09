@@ -25,56 +25,49 @@
 
         <div class="col-xs-2">
 
-            <div class="buffer">
+        <br><br><br><br><br><br><br>
 
-                <h2>Sort By:</h2>
 
-                    <form>
-
-                        <input type="radio" id="make" name="sortBy" value="make">
-                        <label for="make">Make</label><br>
-                        <input type="radio" id="model" name="sortBy" value="model">
-                        <label for="model">Model</label><br>
-                        <input type="radio" id="system" name="sortBy" value="system">
-                        <label for="system">System</label><br>
-                        <input type="radio" id="price" name="sortBy" value="price">
-                        <label for="price">Price</label><br><hr>
-                        <input type="radio" id="asc" name="sortChoice" value="asc">
-                        <label for="asc">Ascending</label><br>
-                        <input type="radio" id="desc" name="sortChoice" value="desc">
-                        <label for="desc">Descending</label><br>
-                        <input type="submit" class="mySort" value="Sort!">
-
-                    </form>
-            
-            </div>
+            <h3>Click on an inventory item to select it, then choose an option from the right.
 
         </div>
 
         <div class="col-xs-8">
 
+            <div class="purpleBack">
+                <input type="text" placeholder="Search...">
+                <button type="submit">Submit</button>
+            </div>
+
             <div class="buffer">
 
-            <table>
+                <table>
 
-                    <tr>
-                        <th>Make</th>
-                        <th>Model</th>
-                        <th>System</th>
-                        <th>Price</th>
-                    </tr>
+                    <thead>
 
-                    <?php foreach ($invItems as $invItem) : ?>
-                    <tr>
-                        <td><?php echo $invItem['make']; ?></td>
-                        <td><?php echo $invItem['model']; ?></td>
-                        <td><?php echo $invItem['system']; ?></td>
-                        <td><?php echo $invItem['price']; ?></td>
-                    </tr>
-                    <?php endforeach; ?>
+                        <tr>
+                            <th>Make</th>
+                            <th>Model</th>
+                            <th>System</th>
+                            <th>Price</th>
+                        </tr>
 
-            </table>
+                    </thead>
 
+                    <tbody>
+
+                        <?php foreach ($invItems as $invItem) : ?>
+                        <tr>
+                            <td><?php echo $invItem['make']; ?></td>
+                            <td><?php echo $invItem['model']; ?></td>
+                            <td><?php echo $invItem['system']; ?></td>
+                            <td><?php echo $invItem['price']; ?></td>
+                        </tr>
+                        <?php endforeach; ?>
+
+                    </tbody>
+
+                </table>
 
             </div>
 
