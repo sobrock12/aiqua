@@ -28,7 +28,6 @@
         <br><br><br><br><br><br><br>
 
 
-            <h3>Click on an inventory item to select it, then choose an option from the right.
 
         </div>
 
@@ -50,6 +49,7 @@
                             <th>Model</th>
                             <th>System</th>
                             <th>Price</th>
+                            <th>Delete</th>
                         </tr>
 
                     </thead>
@@ -62,6 +62,7 @@
                             <td><?php echo $invItem['model']; ?></td>
                             <td><?php echo $invItem['system']; ?></td>
                             <td><?php echo $invItem['price']; ?></td>
+                            <td><a href="model/inventorydelete.php?invID=<?php echo $invItem['invID'];?>"><img src="misc/delete.png" alt="Delete Item" width="32" height="32"></a></td>
                         </tr>
                         <?php endforeach; ?>
 
@@ -74,6 +75,9 @@
         </div>
 
         <div class="col-xs-2">
+
+        <br><br><br><br><br><br><br>
+
 
             <div class="buffer">
 
@@ -113,8 +117,6 @@
                         </div>
                     </div>
                 </div>
-
-                <input type="button" class="myButton" value="Delete Item"><br>
 
             </div>
 

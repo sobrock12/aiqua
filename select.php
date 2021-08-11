@@ -18,12 +18,18 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-2">
-
+<!--
+            <h2>Sort By:</h2>
+                <form>
+                    <input type="radio" id="asc" name="sortChoice" value="asc">
+                    <label for="asc">Ascending</label><br>
+                    <input type="radio" id="desc" name="sortChoice" value="desc">
+                    <label for="desc">Descending</label><br>
+                    <input type="submit" class="mySort" value="Sort!">
+                </form>
+-->
             <br><br><br><br><br><br><br>
 
-                <h3>Click on a quote to select it, then choose an option from the right.</h3>
-
-            
         </div>
         <div class="col-xs-8">
             <div class="purpleBack">
@@ -33,13 +39,15 @@
 
             <div class="buffer">
 
-                <table>
+                <table id = "table">
                 <thead>
                     <tr>
                         <th>Customer/Quote Name</th>
                         <th>Tail #</th>
                         <th>Contact #</th>
                         <th>Date Created</th>
+                        <th>Load</th>
+                        <th>Delete</th>
                     </tr>
                 </thead>
 
@@ -50,6 +58,8 @@
                         <td><?php echo $quote['tailNum']; ?></td>
                         <td><?php echo $quote['contact']; ?></td>
                         <td><?php echo $quote['date']; ?></td>
+                        <td><a href="quote.php?quoteID=<?php echo $quote['quoteID'];?>"><img src="misc/open.jpg" alt="Load This Quote" width="32" height="32"></a></td>
+                        <td><a href="delete.php?quoteID=<?php echo $quote['quoteID'];?>"><img src="misc/delete.png" alt="Delete This Quote" width="32" height="32"></a></td>
                     </tr>
                     <?php endforeach; ?>
                 </tbody>
@@ -60,9 +70,6 @@
         <div class="col-xs-2">
 
         <br><br><br><br><br><br><br>    
-
-                <input type="button" class="myButton" value="Load this Quote!">
-                <input type="button" class="myButton" value="Delete this Quote!"><br>
 
                 <input type="button" class="myButton" value="Create a new Quote!" data-toggle="modal" data-target="#exampleModalCenter"><br>
 
