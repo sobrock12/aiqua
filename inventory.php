@@ -40,6 +40,13 @@
 
             <div class="buffer">
 
+            <?php if(sizeof($invItems) == 0) : ?>
+
+                <h5>No inventory items to display. Click the "Add Item" button
+                    on the right to start.</h5>
+
+            <?php else : ?>
+
                 <table>
 
                     <thead>
@@ -69,6 +76,8 @@
                     </tbody>
 
                 </table>
+
+            <?php endif; ?>
 
             </div>
 
