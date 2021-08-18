@@ -1,6 +1,7 @@
 <?php
 echo "<body style='background-color:#A6CBFC'>";
 
+//handles user log in
 
 require 'database.php';
 
@@ -18,11 +19,8 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 $username = $password = "";
 $username_err = $password_err = $login_err = "";
 
- 
-// Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
  
-    // Check if username is empty
     if(empty(trim($_POST["username"]))){
 
         $username_err = "Please enter username.";
@@ -34,7 +32,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     }
     
-    // Check if password is empty
     if(empty(trim($_POST["password"]))){
 
         $password_err = "Please enter your password.";
@@ -46,22 +43,21 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     }
     
-    // Validate credentials
     if(empty($username_err) && empty($password_err)){
 
-        // Prepare a select statement
-        $sql = "SELECT id, username, password FROM accounts WHERE username = :username";
+        $sql = "SELECT id, username, password 
+                FROM accounts 
+                WHERE username = :username";
         
         if($stmt = $pdo->prepare($sql)){
-            // Bind variables to the prepared statement as parameters
+
             $stmt->bindParam(":username", $param_username, PDO::PARAM_STR);
-            
-            // Set parameters
+
             $param_username = trim($_POST["username"]);
             
-            // Attempt to execute the prepared statement
+
             if($stmt->execute()){
-                // Check if username exists, if yes then verify password
+                //checks if username exists, if yes then verify password
                 if($stmt->rowCount() == 1){
 
                     if($row = $stmt->fetch()){
@@ -69,21 +65,19 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         $username = $row["username"];
                         $hashed_password = $row["password"];
                         if(password_verify($password, $hashed_password)){
-                            // Password is correct, so start a new session
+                            //if password is correct, new session is started
                             session_start();
                             
-                            // Store data in session variables
                             $_SESSION["loggedin"] = true;
                             $_SESSION["id"] = $id;
                             $_SESSION["username"] = $username;                            
                             
-                            // Redirect user to quote selection page
                             echo "Logged In successfully! Continuing to Quote Selection page in 5 seconds...";
 
                             header( "refresh:5; url=../select.php");
                             
                         } else{
-                            // Password is not valid, display a generic error message
+
                             $login_err = "Invalid username or password.";
                             echo $login_err;
 
@@ -91,23 +85,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     }
                 } else{
 
-                    // Username doesn't exist, display a generic error message
                     $login_err = "Invalid username or password.";
                     echo $login_err;
 
                 }
             } else{
 
-                echo "Oops! Something went wrong. Please try again later.";
+                echo "Something went wrong. Please try again later.";
 
             }
 
-            // Close statement
             unset($stmt);
         }
     }
     
-    // Close connection
     unset($pdo);
 
 }

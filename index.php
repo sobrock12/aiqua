@@ -4,6 +4,9 @@
 
 ?>
 
+<!-- initial log in page, user will either create a new account or login to existing account -->
+<!-- new account creation is passed to createuser.php, logging in is passed to authenticate.php -->
+
 <div class="container">
     <div class="row">
         <div class="col-xs-4">

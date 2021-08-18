@@ -1,4 +1,8 @@
 <?php
+
+//this page handles inventory item deletion
+//if account associated with inventory item passed via GET does not match current logged in user, delete does not occur, user is rerouted back to inventory.php page
+
 session_start();
 
 require('database.php');

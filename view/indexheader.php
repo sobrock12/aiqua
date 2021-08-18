@@ -1,4 +1,6 @@
-
+<!-- 
+    header for login page where user is not logged in, therefore navbar is not displayed
+-->
 
 <!DOCTYPE html>
 <html>

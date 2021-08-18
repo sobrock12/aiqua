@@ -1,4 +1,7 @@
 <?php
+
+//handles account creation.
+
 echo "<body style='background-color:#A6CBFC'>";
 session_start();
 
@@ -11,7 +14,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ( !isset($_POST['username'], $_POST['password'], $_POST['confirm']) ) {
         
-	    //exit('Please fill out all fields!');
         echo 'Please fill out all fields!';
 
     }
@@ -28,18 +30,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
 }else{
 
-        // Prepare a select statement
-        $sql = "SELECT id FROM accounts WHERE username = :username";
+        $sql = "SELECT id FROM accounts 
+                WHERE username = :username";
         
         if($stmt = $pdo->prepare($sql)){
 
-            // Bind variables to the prepared statement as parameters
             $stmt->bindParam(":username", $param_username, PDO::PARAM_STR);
-            
-            // Set parameters
             $param_username = trim($_POST["username"]);
             
-            // Attempt to execute the prepared statement
             if($stmt->execute()){
 
                 if($stmt->rowCount() == 1){
@@ -55,11 +53,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
             } else {
 
-                echo "Oops! Something went wrong. Please try again later.";
+                echo "Something went wrong. Please try again later.";
 
             }
 
-            // Close statement
             unset($stmt);
         }
     }
@@ -103,15 +100,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     if(empty($username_err) && empty($password_err) && empty($confirm_password_err)){
         
         // Prepare an insert statement
-        $sql = "INSERT INTO accounts (username, password) VALUES (:username, :password)";
+        $sql = "INSERT INTO accounts 
+                (username, password) 
+                VALUES 
+                (:username, :password)";
          
         if($stmt = $pdo->prepare($sql)){
 
-            // Bind variables to the prepared statement as parameters
             $stmt->bindParam(":username", $param_username, PDO::PARAM_STR);
             $stmt->bindParam(":password", $param_password, PDO::PARAM_STR);
             
-            // Set parameters
             $param_username = $username;
             $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
             
@@ -120,10 +118,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 // Redirect to login page
                 header("location: ../view/createusersuccess.php");
             } else{
-                echo "Oops! Something went wrong. Please try again later.";
+                echo "Something went wrong. Please try again later.";
             }
 
-            // Close statement
             unset($stmt);
         }
     }

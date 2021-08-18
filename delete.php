@@ -3,6 +3,9 @@ include('view/header.php');
 
 require('model/database.php');
 
+
+//SQL query to load selected quote info 
+
 if($_SERVER["REQUEST_METHOD"] == "GET"){
 
     $quoteID = filter_input(INPUT_GET, 'quoteID');
@@ -14,6 +17,10 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
     $statement->execute();
     $quoteLoaded = $statement->fetchAll();
     $statement->closeCursor();
+
+
+    //if the user account associated with the quoteID passed via GET 
+    //does not match currently logged in account, user is rerouted back to select.php page
 
     foreach ($quoteLoaded as $quoteLoad){
 
@@ -30,6 +37,11 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
 }
 
 ?>
+
+<!-- 
+    delete.php page is used to confirm that user does indeed want to delete the selected quote
+    upon clicking submit, currently selected quoteID is passed to quotedelete.php
+-->
 
 <div class="container">
 

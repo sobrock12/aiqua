@@ -1,5 +1,8 @@
 <?php
 
+//logout.php page displays for 5 seconds after user clicks "Log Out" in top navbar
+//user is rerouted to login page
+
 include 'logoutheader.php'
 
 ?>

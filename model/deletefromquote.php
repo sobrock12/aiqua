@@ -1,4 +1,7 @@
 <?php
+
+//this page handles deleting an item from currently loaded quote
+
 session_start();
 
 require('database.php');

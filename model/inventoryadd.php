@@ -1,4 +1,7 @@
 <?php
+
+//this page receives new inventory item info via POST, creates new inventory entry in database
+
 session_start();
 
 require('database.php');

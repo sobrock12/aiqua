@@ -12,12 +12,16 @@
 
     $_SESSION['quoteID'] = $quoteID;
 
+    //if no quoteID is passed via GET, user is rerouted back to select page
+
     if ($_SESSION['quoteID'] == ''){
 
         header('location: select.php');
 
     }
 
+    //SQL query to obtain all inventory items associated with logged in account
+    
     $query = 'SELECT * FROM inventory WHERE acctID = :acctID';
     $statement = $pdo->prepare($query);
     $statement->bindValue(':acctID', $acctID);
@@ -25,6 +29,8 @@
     $invItems = $statement->fetchAll();
     $statement->closeCursor();
 
+
+    //SQL query to obtain all inventory items associated with currently loaded quote
 
     $quotetoload = filter_input(INPUT_GET, 'quoteID');
     $query2 = 'SELECT i.make, i.model, i.system, i.price, q.itemID, q.invID FROM inventory AS i 
@@ -37,6 +43,13 @@
     $statement->closeCursor();
 
 ?>
+
+<!-- 
+    quote.php page allows user to add or remove inventory items from currently loaded quote
+    displays inventory items on left side of page
+    displays items in quote in center of page
+    shows running price subtotal of all items in quote by adding prices of inventory items together
+-->
 
 <div class="container-fluid">
 
@@ -146,17 +159,9 @@
         <div class="col-xs-4">
 
             <div class="buffer">
+                <br><br><br>
 
-                <h4 id="subtotal">Subtotal:.....<?php echo $subtotal; ?></h4><br>
-
-                <h6><b>Labor Cost Multiplier...</h6></b>
-                <h6>(Enter your percentages as decimals, ex. 25% as 0.25)</h6>
-                <input type="text" id="multiplier" name="multiplier" size="5">
-
-
-                <button type="button" onClick="calculateTotal()" />Calculate</button> 
-
-                <h3><b>Total:.....</b></h3><br>
+                <h3><b>Subtotal:.....<?php echo $subtotal; ?></b></h3><br>
 
             </div>
 

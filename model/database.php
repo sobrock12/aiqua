@@ -1,5 +1,7 @@
 <?php
 
+//database connection page
+
 //localhost connection
 $pdo = 'mysql:host=localhost;dbname=quoteProj';
 $username= 'root';

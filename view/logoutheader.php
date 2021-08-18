@@ -1,4 +1,4 @@
-
+<!-- header for logout page -->
 <!DOCTYPE html>
 <html>
 

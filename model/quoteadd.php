@@ -1,4 +1,7 @@
 <?php
+
+//this page takes in new quote info entered by user via POST, creates new quote entry in database
+
 session_start();
 
 require('database.php');

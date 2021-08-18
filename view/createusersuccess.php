@@ -1,4 +1,7 @@
 <?php
+
+//page confirming successful user creation, reroutes back to index.php page for login
+
 echo "<body style='background-color:#A6CBFC'>";
 session_start();
 

@@ -6,6 +6,9 @@
 
     $acctID = $_SESSION['id'];
 
+
+    //SQL query to load all inventory items associated with current logged in account
+
     $query = 'SELECT * FROM inventory WHERE acctID = :acctID';
     $statement = $pdo->prepare($query);
     $statement->bindValue(':acctID', $acctID);
@@ -16,6 +19,11 @@
 ?>
 
 
+<!-- 
+    inventory.php page displays all inventory items associated with logged in user
+    allows user to enter new item into inventory via Bootstrap modal menu
+    allows user to delete items from inventory as well
+-->
 
 <div class="container">
     
@@ -25,18 +33,11 @@
 
         <div class="col-xs-2">
 
-        <br><br><br><br><br><br><br>
-
-
+        <br><br><br><br>
 
         </div>
 
         <div class="col-xs-8">
-
-            <div class="purpleBack">
-                <input type="text" placeholder="Search...">
-                <button type="submit">Submit</button>
-            </div>
 
             <div class="buffer">
 
@@ -85,7 +86,7 @@
 
         <div class="col-xs-2">
 
-        <br><br><br><br><br><br><br>
+        <br><br><br><br><br>
 
 
             <div class="buffer">

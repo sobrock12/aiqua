@@ -1,4 +1,8 @@
 <?php
+
+//this page is reached after user has confirmed a quote is to be deleted.
+//deletes selected quote, reroutes to quote selection screen
+
 session_start();
 
 require('database.php');

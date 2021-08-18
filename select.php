@@ -4,6 +4,9 @@
 
     require('model/database.php');
 
+    
+    //SQL query to get quotes tied to currently logged in account
+
     $acctID = $_SESSION['id'];
 
     $query = 'SELECT * FROM quotes WHERE acctID = :acctID';
@@ -15,27 +18,21 @@
 
 ?>
 
+<!-- 
+    html displays quotes tied to account loaded from SQL database 
+    user can create a new quote via Bootstrap modal form
+    user can select a quote to view
+    user can delete a quote listed
+-->
+
 <div class="container">
     <div class="row">
         <div class="col-xs-2">
-<!--
-            <h2>Sort By:</h2>
-                <form>
-                    <input type="radio" id="asc" name="sortChoice" value="asc">
-                    <label for="asc">Ascending</label><br>
-                    <input type="radio" id="desc" name="sortChoice" value="desc">
-                    <label for="desc">Descending</label><br>
-                    <input type="submit" class="mySort" value="Sort!">
-                </form>
--->
+
             <br><br><br><br><br><br><br>
 
         </div>
         <div class="col-xs-8">
-            <div class="purpleBack">
-                <input type="text" placeholder="Search...">
-                <button type="submit">Submit</button>
-            </div>
 
             <div class="buffer">
 

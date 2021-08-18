@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+//this page handles associating selected inventory item with currently selected quote
+
 require('database.php');
 
 if($_SERVER["REQUEST_METHOD"] == "GET"){

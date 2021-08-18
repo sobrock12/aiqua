@@ -1,5 +1,7 @@
 <?php
 
+    //if user is not logged in, session has not started therefore user is rerouted back to login page
+
     session_start();
 
     if (!isset($_SESSION['loggedin'])) {
@@ -9,6 +11,10 @@
 	exit;
 }
 ?>
+
+<!-- 
+    this header is used when user is logged in and session is active, includes navbar
+-->
 
 <!DOCTYPE html>
 <html>
@@ -25,7 +31,7 @@
 
 </head>
 
-<body>
+<body onload='hideTotal()'>
    
     <nav class="navtop">
 
