@@ -30,8 +30,6 @@
     <link rel="stylesheet" type="text/css" href="view/css/main.css" />
 
 </head>
-
-<body onload='hideTotal()'>
    
     <nav class="navtop">
 
