@@ -14,7 +14,7 @@ $password = 'vutx627w3bkh9qff';
 try {
     //local development server connection
     //if using a $password, add it as 3rd parameter
-    $pdo = new PDO($pdo, $username);
+    $pdo = new PDO($pdo, $username, $password);
 
 } catch (PDOException $e) {
 
