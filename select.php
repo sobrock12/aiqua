@@ -49,7 +49,6 @@
                             <th>Customer/Quote Name</th>
                             <th>Tail #</th>
                             <th>Contact #</th>
-                            <th>Date Created</th>
                             <th>Load</th>
                             <th>Delete</th>
                         </tr>
@@ -61,7 +60,6 @@
                             <td><?php echo $quote['quoteName']; ?></td>
                             <td><?php echo $quote['tailNum']; ?></td>
                             <td><?php echo $quote['contact']; ?></td>
-                            <td><?php echo $quote['date']; ?></td>
                             <td><a href="quote.php?quoteID=<?php echo $quote['quoteID'];?>"><img src="misc/open.jpg" alt="Load This Quote" width="32" height="32"></a></td>
                             <td><a href="delete.php?quoteID=<?php echo $quote['quoteID'];?>"><img src="misc/delete.png" alt="Delete This Quote" width="32" height="32"></a></td>
                         </tr>
